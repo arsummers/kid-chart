@@ -8,6 +8,25 @@ will need to use
 `poetry export -f requirements.txt -o requirements.txt`
 since I'm using poetry instead of pip
 don't forget to test this too
+remember httpie
+
+docker-compose up --build
+docker-compose down
+docker-compose restart
+docker-compose exec web ./manage.py migrate
+docker-compose exec web ./manage.py collectstatic
+
+Stretch goal:
+Ability to log in as a kid vs carer
+
+Absolutely going to need to be able to customize what user accounts can see and add to in the database.
+
+Profiles for each kid - maybe like a summary page of each kid's points and actions?
+
+Reference:
+https://docs.djangoproject.com/en/3.0/ref/models/fields/
+https://docs.google.com/document/d/1dTbL_GFY4UTfZzhZOvZFihed1t2qu0SUb0qIo6HvE_0/edit
+
 
 ### Architecture
 
@@ -15,13 +34,17 @@ don't forget to test this too
 
 - User
     - name - this is intended to be for the parent or whoever is in charge of taking care and setting rules
-    - will need to be able to fill out data-base/API from UI, and have it be unique for each user.
+    - will need to be able to fill out data-base/API from UI, and have it be unique for each user. Admin site should be for me only, but user will need to be able to update their own set of rules and kids
+
+    - can maybe use the built in user model from permissions?
+
+    - foreign keys pointing to kid and rules
 
 - Kid
     - name
     - points counter
 
 - Rule
-    - will need a "weight" value
+    - will need a "weight" value/points value
     - name
     - description
