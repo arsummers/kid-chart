@@ -23,6 +23,10 @@ Absolutely going to need to be able to customize what user accounts can see and 
 
 Profiles for each kid - maybe like a summary page of each kid's points and actions?
 
+Reference:
+https://docs.djangoproject.com/en/3.0/ref/models/fields/
+https://docs.google.com/document/d/1dTbL_GFY4UTfZzhZOvZFihed1t2qu0SUb0qIo6HvE_0/edit
+
 
 ### Architecture
 
