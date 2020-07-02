@@ -42,9 +42,15 @@ https://docs.google.com/document/d/1dTbL_GFY4UTfZzhZOvZFihed1t2qu0SUb0qIo6HvE_0/
 
 - Kid
     - name
-    - points counter
+        - string
+    - points counter - influenced by rules
+        - int
 
 - Rule
     - will need a "weight" value/points value
+        - int
     - name
+        - string
     - description
+        - string
+    - will need to be assigned to kids somehow
