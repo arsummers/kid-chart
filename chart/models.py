@@ -20,7 +20,6 @@ class Rule(models.Model):
     def __str__(self):
         return f'Rule: {self.name} \n Points worth: {self.weight} \n Description: {self.description}'
         
-
 class Kid(models.Model):
     """
     Model representing a base class for kids. Each kid will be represented by name with a primary key. Rules can be assigned to individual kids.
