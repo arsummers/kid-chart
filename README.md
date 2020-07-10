@@ -28,6 +28,8 @@ https://docs.djangoproject.com/en/3.0/ref/models/fields/
 https://docs.google.com/document/d/1dTbL_GFY4UTfZzhZOvZFihed1t2qu0SUb0qIo6HvE_0/edit
 
 
+Might design using tailwing(https://tailwindcss.com/) or bootstrap
+
 ### Architecture
 
 #### Models:
