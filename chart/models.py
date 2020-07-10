@@ -7,7 +7,7 @@ import uuid
 
 class Rule(models.Model):
     """
-    Model representing a base class for rules. Weight field is how much you want the rule to be worth.
+    Model representing a base class for rules. Weight field is how much you want the rule to be worth. The same rule can be applied to multiple kids, and a single kid can be assigned multiple rules.
     """
     name = models.CharField(max_length=50, help_text='Enter rule', default=None)
     weight = models.IntegerField(default=0)
@@ -20,7 +20,6 @@ class Rule(models.Model):
     def __str__(self):
         return f'Rule: {self.name} \n Points worth: {self.weight} \n Description: {self.description}'
         
-
 class Kid(models.Model):
     """
     Model representing a base class for kids. Each kid will be represented by name with a primary key. Rules can be assigned to individual kids.
@@ -44,6 +43,9 @@ class Kid(models.Model):
         return reverse('kid-detail', args=[str(self.id)])
 
 class KidInstance(models.Model):
+    """
+    Model for an individual kid
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this kid')
     kid = models.ForeignKey('Kid', on_delete=models.SET_NULL, null=True)
     points = models.IntegerField(default=0)

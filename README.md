@@ -28,6 +28,8 @@ https://docs.djangoproject.com/en/3.0/ref/models/fields/
 https://docs.google.com/document/d/1dTbL_GFY4UTfZzhZOvZFihed1t2qu0SUb0qIo6HvE_0/edit
 
 
+Might design using tailwing(https://tailwindcss.com/) or bootstrap
+
 ### Architecture
 
 #### Models:
@@ -54,3 +56,10 @@ https://docs.google.com/document/d/1dTbL_GFY4UTfZzhZOvZFihed1t2qu0SUb0qIo6HvE_0/
     - description
         - string
     - will need to be assigned to kids somehow
+
+I'll need a model relationship diagram here
+
+## User stories
+
+[-] as a user, I want a personalized account so that I can keep track of my set of kids and rules
+[-] as a user, I want to be able to assign points to kids based on rules/chores, so I can check how they're keeping up with stuff at a glance
