@@ -1,14 +1,14 @@
 from django.shortcuts import render
-from chart.models import KidInstance, Kids, Reward, Rules
+from chart.models import KidInstance, Kid, Reward, Rule
 # Create your views here.
 
 def index(request):
     """
     view function for site homepage. Stuff below will be subject to change if I don't like how it looks
     """
-    kids_list = Kids.objects.all()
+    kids_list = Kid.objects.all()
 
-    rules_list = Rules.objects.all()
+    rules_list = Rule.objects.all()
 
     context = {
         'kids_list' : kids_list,
