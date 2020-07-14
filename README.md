@@ -62,12 +62,12 @@ I'll need a model relationship diagram here
 ## Wireframes
 
 ### login page --> /login
-![simple login page](wiresframes/login.png)
+![simple login page](wireframes/login.png)
 
 Currently only have plans for parent/caretaker profiles. Kid profiles may be a goal for the future.
 
 ### navigation page --> Part of the "base" template
-![simple hamburger nav bar](wiresframes/nav.png)
+![simple hamburger nav bar](wireframes/nav.png)
 
 will exist as a template partial built into the base
 
