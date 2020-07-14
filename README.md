@@ -76,7 +76,7 @@ will exist as a template partial built into the base
 List of all kids the user is in charge of
 
 ### kid profiles --> /kids/kid_id
-![detail page for individual kid](wireframes/kid_profile.png)
+![detail page for individual kid](wireframes/kid_profiles.png)
 Page for specific kid. Links from the kid list page. Can edit rules assigned to specific kid from here
 
 ### rules list --> /rules
