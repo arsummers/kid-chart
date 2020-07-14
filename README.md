@@ -59,6 +59,38 @@ Might design using tailwing(https://tailwindcss.com/) or bootstrap
 
 I'll need a model relationship diagram here
 
+## Wireframes
+
+### login page --> /login
+![simple login page](wireframes/login.png)
+
+Currently only have plans for parent/caretaker profiles. Kid profiles may be a goal for the future.
+
+### navigation page --> Part of the "base" template
+![simple hamburger nav bar](wireframes/nav.png)
+
+will exist as a template partial built into the base
+
+### kid list --> /kids
+![list of kids](wireframes/kid_list.png)
+List of all kids the user is in charge of
+
+### kid profiles --> /kids/kid_id
+![detail page for individual kid](wireframes/kid_profiles.png)
+Page for specific kid. Links from the kid list page. Can edit rules assigned to specific kid from here
+
+### rules list --> /rules
+![list of rules](wireframes/rules_list.png)
+List of all rules user has for their account.
+
+### rules detail --> /rules/rules_id
+![detail page for rules](wireframes/rules_detail.png)
+Detail view for rules, containing descriptions, weight/points.Goal is to be able to assign same rule to multiple kids at from this page
+
+### rewards --> /rewards
+![basic rewards list](wireframes/rewards.png)
+List of rewards for doing tasks, and the points they can become available at. Doesn't currently influence the other parts of the databse.
+
 ## User stories
 
 [-] as a user, I want a personalized account so that I can keep track of my set of kids and rules
