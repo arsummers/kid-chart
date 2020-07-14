@@ -76,7 +76,7 @@ will exist as a template partial built into the base
 List of all kids the user is in charge of
 
 ### kid profiles --> /kids/kid_id
-![detail page for individual kid](wireframes/kid_detail.png)
+![detail page for individual kid](wireframes/kid_profile.png)
 Page for specific kid. Links from the kid list page. Can edit rules assigned to specific kid from here
 
 ### rules list --> /rules
@@ -84,7 +84,7 @@ Page for specific kid. Links from the kid list page. Can edit rules assigned to 
 List of all rules user has for their account.
 
 ### rules detail --> /rules/rules_id
-![detail page for rules](wiresframes/rules_detail.png)
+![detail page for rules](wireframes/rules_detail.png)
 Detail view for rules, containing descriptions, weight/points.Goal is to be able to assign same rule to multiple kids at from this page
 
 ### rewards --> /rewards
