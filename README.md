@@ -95,3 +95,10 @@ List of rewards for doing tasks, and the points they can become available at. Do
 
 [-] as a user, I want a personalized account so that I can keep track of my set of kids and rules
 [-] as a user, I want to be able to assign points to kids based on rules/chores, so I can check how they're keeping up with stuff at a glance
+
+## Tests
+[-] test that route return 200
+    [-] route 1
+    [-] route 2 etc
+[-] test that a 404 redirects to an error page
+[-] test for inputs
