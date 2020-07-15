@@ -20,3 +20,6 @@ def index(request):
 
 class KidListView(generic.ListView):
     model = Kid
+
+class KidDetailView(generic.DetailView):
+    model = Kid
