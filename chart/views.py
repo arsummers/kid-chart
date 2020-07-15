@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import generic
 from chart.models import KidInstance, Kid, Reward, Rule
 # Create your views here.
 
@@ -16,3 +17,6 @@ def index(request):
     }
 
     return render(request, 'index.html', context=context)
+
+class KidListView(generic.ListView):
+    model = Kid

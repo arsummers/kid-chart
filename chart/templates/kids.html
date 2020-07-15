@@ -1,1 +1,16 @@
 {% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Kids</h1>
+  {% if kid_list %}
+  <ul>
+    {% for kid in kid_list %}
+      <li>
+        <a href="{{ kid.get_absolute_url }}">{{ kid.name }}</a> 
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>No kids here</p>
+  {% endif %}       
+{% endblock %}
