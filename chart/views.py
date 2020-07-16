@@ -23,3 +23,9 @@ class KidListView(generic.ListView):
 
 class KidDetailView(generic.DetailView):
     model = Kid
+
+class RuleListView(generic.ListView):
+    model = Rule
+
+class RuleDetailView(generic.DetailView):
+    model = Rule

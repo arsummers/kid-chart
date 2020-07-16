@@ -20,6 +20,12 @@ class Rule(models.Model):
     def __str__(self):
         return f'Rule: {self.name} \n Points worth: {self.weight} \n Description: {self.description}'
 
+    def get_absolute_url():
+        """
+        url to gain access to one Rule
+        """
+        return reverse('rule-detail', args=[str(self.id)])
+
 class RuleInstance(models.Model):
     """
     Model representing all the rules
