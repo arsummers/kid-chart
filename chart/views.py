@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.views import generic
+from django.contrib.auth.decorators import login_required
 from chart.models import KidInstance, Kid, Reward, Rule
 # Create your views here.
 
+@login_required
 def index(request):
     """
     view function for site homepage. Stuff below will be subject to change if I don't like how it looks
