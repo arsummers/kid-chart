@@ -7,7 +7,7 @@ class KidAdmin(admin.ModelAdmin):
 
 @admin.register(KidInstance)
 class KidInstanceAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('kid', 'points', 'parent', 'id')
 
 @admin.register(Reward)
 class RewardAdmin(admin.ModelAdmin):

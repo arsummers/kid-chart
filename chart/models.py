@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 import uuid
 
 # Create your models here.
@@ -63,6 +64,7 @@ class KidInstance(models.Model):
     kid = models.ForeignKey(Kid, on_delete=models.SET_NULL, null=True)
     points = models.IntegerField(default=0)
     rules = models.ManyToManyField(Rule, help_text='Select a rule to give to this kid')
+    parent = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
     class Meta:
         ordering = ['-points']
