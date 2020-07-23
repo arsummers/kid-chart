@@ -59,6 +59,8 @@ class Kid(models.Model):
 class KidInstance(models.Model):
     """
     Model for an individual kid
+
+    Learn more about permissions here: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this kid')
     kid = models.ForeignKey(Kid, on_delete=models.SET_NULL, null=True)
