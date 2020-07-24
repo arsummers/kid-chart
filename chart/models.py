@@ -21,11 +21,13 @@ class Rule(models.Model):
     def __str__(self):
         return f'Rule: {self.name} \n Points worth: {self.weight} \n Description: {self.description}'
 
-    def get_absolute_url():
+    def get_absolute_url(self):
         """
         url to gain access to one Rule
         """
+
         return reverse('rule-detail', args=[str(self.id)])
+
 
 class RuleInstance(models.Model):
     """
@@ -33,6 +35,7 @@ class RuleInstance(models.Model):
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this rule')
     rules = models.ForeignKey(Rule, on_delete=models.SET_NULL, null=True)
+
 
 class Kid(models.Model):
     """
@@ -50,11 +53,14 @@ class Kid(models.Model):
     def __str__(self):
         return f'Name: {self.name}\n Points total: {self.points} \n Rules assigned: {self.rules}'
 
-    def get_absolute_url():
+    def get_absolute_url(self):
         """
         url to gain access to one Kid
         """
+    
         return reverse('kid-detail', args=[str(self.id)])
+
+
 
 class KidInstance(models.Model):
     """
@@ -73,6 +79,8 @@ class KidInstance(models.Model):
 
     def __str__(self):
         return f'{self.id}, {self.kid.name}'
+
+
 
 class Reward(models.Model):
     name = models.CharField(max_length=50, help_text='Enter reward', default=None)
