@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from django.views import generic
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
 from chart.models import KidInstance, Kid, Reward, Rule
 # Create your views here.
 
+@login_required
 def index(request):
     """
     view function for site homepage. Stuff below will be subject to change if I don't like how it looks
@@ -23,3 +27,21 @@ class KidListView(generic.ListView):
 
 class KidDetailView(generic.DetailView):
     model = Kid
+
+class KidCreate(CreateView):
+    model = Kid
+    fields = '__all__'
+
+class KidUpdate(UpdateView):
+    model = Kid
+    fields = '__all__'
+
+class KidDelete(DeleteView):
+    model = Kid
+    success_url = reverse_lazy('kids')
+
+class RuleListView(generic.ListView):
+    model = Rule
+
+class RuleDetailView(generic.DetailView):
+    model = Rule
