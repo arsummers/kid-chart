@@ -102,3 +102,6 @@ List of rewards for doing tasks, and the points they can become available at. Do
     [-] route 2 etc
 [-] test that a 404 redirects to an error page
 [-] test for inputs
+
+### Notes:
+ 7/24: temporarily stopping base tutorial here: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Testing to focus on getting views, permissions, and wireframes locked in.
