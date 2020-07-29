@@ -13,9 +13,10 @@
       </p>
       
     {% endfor %}
-    <button><a href="#">Update this kid</a></button>
+    <!-- need to study urls to make this reusable -->
+    <button><a href="{{ kid.get_absolute_url }}/update">Update this kid</a></button>
 
-    <button><a href="#">Delete this kid</a></button>
+    <button><a href="{{ kid.get_absolute_url }}/delete">Delete this kid</a></button>
 
   </div>
 {% endblock %}
