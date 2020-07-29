@@ -45,3 +45,15 @@ class RuleListView(generic.ListView):
 
 class RuleDetailView(generic.DetailView):
     model = Rule
+
+class RuleCreate(CreateView):
+    model = Rule
+    fields = '__all__'
+
+class RuleUpdate(UpdateView):
+    model = Rule
+    fields = '__all__'
+
+class RuleDelete(DeleteView):
+    model = Rule
+    success_url = reverse_lazy('rules')

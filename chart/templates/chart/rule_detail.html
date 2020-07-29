@@ -1,3 +1,5 @@
+{% extends "base_generic.html" %}
+
 {% block content %}
   <h1>Name: {{ rule.name }}</h1>
 
@@ -13,5 +15,8 @@
       </p>
       
     {% endfor %}
+    <button><a href="{{ rule.get_absolute_url }}/update">Update this rule</a></button>
+
+    <button><a href="{{ rule.get_absolute_url }}/delete">Delete this rule</a></button>
   </div>
 {% endblock %}
