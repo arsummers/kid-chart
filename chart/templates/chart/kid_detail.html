@@ -1,3 +1,5 @@
+{% extends "base_generic.html" %}
+
 {% block content %}
   <h1>Name: {{ kid.name }}</h1>
 
@@ -13,7 +15,7 @@
       </p>
       
     {% endfor %}
-    <!-- need to study urls to make this reusable -->
+
     <button><a href="{{ kid.get_absolute_url }}/update">Update this kid</a></button>
 
     <button><a href="{{ kid.get_absolute_url }}/delete">Delete this kid</a></button>
