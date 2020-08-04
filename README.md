@@ -105,3 +105,5 @@ List of rewards for doing tasks, and the points they can become available at. Do
 
 ### Notes:
  7/24: temporarily stopping base tutorial here: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Testing to focus on getting views, permissions, and wireframes locked in.
+
+8/4: I'm going to try to refactor by splitting the Rule model off into it's own app, so I can 1: reference it within the Kid model the way I want to, withouth the call stack gettin in the way, and 2: maybe access it more easily from the kids app. Don't know if it'll work yet, but current stuff is causing trouble so might as well try.
