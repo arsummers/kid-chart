@@ -29,6 +29,14 @@ class KidListView(generic.ListView):
 class KidDetailView(generic.DetailView):
     model = Kid
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['rules_list'] = Rule.objects.all()
+
+        return context
+
+
 class KidCreate(CreateView):
     model = Kid
     fields = '__all__'
