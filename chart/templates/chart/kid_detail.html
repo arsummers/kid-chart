@@ -8,19 +8,18 @@
   <div style="margin-left:20px;margin-top:20px">
     <h4>Rules</h4>
 
-    
 
-    <button><a href="{{ kid.get_absolute_url }}/update">Update this kid</a></button>
-
-    <button><a href="{{ kid.get_absolute_url }}/delete">Delete this kid</a></button>
-
-    {% for rule in kid.kidinstance_set.all %}
+    {% for rule in rules_list %}
       <hr>
       <p>
-        {{ rule.get_status_display }}
+        {{ rule }}
       </p>
       
     {% endfor %}
+
+  <button><a href="{{ kid.get_absolute_url }}/update">Update this kid</a></button>
+
+  <button><a href="{{ kid.get_absolute_url }}/delete">Delete this kid</a></button>
 
   </div>
 {% endblock %}

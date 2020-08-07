@@ -26,6 +26,8 @@ class KidListView(generic.ListView):
     model = Kid
 
 # I will need to pass all of the rules assigned to this view and template as well, so the user can easily see what they've assigned to that kid
+
+
 class KidDetailView(generic.DetailView):
     model = Kid
 

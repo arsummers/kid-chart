@@ -31,10 +31,13 @@ class Rule(models.Model):
 
 class RuleInstance(models.Model):
     """
-    Model representing all the rules
+    Model representing instances of rules
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this rule')
     rules = models.ForeignKey(Rule, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return f'{self.id}, {self.rule.name}'
 
 
 class Kid(models.Model):
