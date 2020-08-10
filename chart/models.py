@@ -19,7 +19,7 @@ class Rule(models.Model):
 
     # methods
     def __str__(self):
-        return f'Rule: {self.name} \n Points worth: {self.weight} \n Description: {self.description}'
+        return f'{self.name} \n Points worth: {self.weight} \n Description: {self.description}'
 
     def get_absolute_url(self):
         """
@@ -81,7 +81,7 @@ class KidInstance(models.Model):
         ordering = ['-points']
 
     def __str__(self):
-        return f'{self.id}, {self.kid.name}'
+        return f'{self.id}, Name: {self.kid.name}, Rules: {self.rules}'
 
 
 
