@@ -3,7 +3,7 @@ from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
-from chart.models import KidInstance, Kid, Reward, Rule
+from chart.models import KidInstance, Kid, Reward, Rule, RuleInstance
 # Create your views here.
 
 @login_required

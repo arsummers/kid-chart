@@ -39,7 +39,6 @@ class RuleInstance(models.Model):
     def __str__(self):
         return f'{self.id}, {self.rule.name}'
 
-
 class Kid(models.Model):
     """
     Model representing a base class for kids. Each kid will be represented by name with a primary key. Rules can be assigned to individual kids.
@@ -74,8 +73,9 @@ class KidInstance(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this kid')
     kid = models.ForeignKey(Kid, on_delete=models.SET_NULL, null=True)
     points = models.IntegerField(default=0)
-    rules = models.ManyToManyField(Rule, help_text='Select a rule to give to this kid')
     parent = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+
+
 
     class Meta:
         ordering = ['-points']
