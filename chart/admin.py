@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Kid, KidInstance, Reward, Rule, RuleInstance
+from .models import Kid, KidInstance, Reward, Rule
 
 @admin.register(Kid)
 class KidAdmin(admin.ModelAdmin):
@@ -17,6 +17,6 @@ class RewardAdmin(admin.ModelAdmin):
 class RuleAdmin(admin.ModelAdmin):
     pass
 
-@admin.register(RuleInstance)
-class RuleInstanceAdmin(admin.ModelAdmin):
-    pass
+# @admin.register(RuleInstance)
+# class RuleInstanceAdmin(admin.ModelAdmin):
+#     pass

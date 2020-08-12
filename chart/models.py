@@ -13,6 +13,7 @@ class Rule(models.Model):
     name = models.CharField(max_length=50, help_text='Enter rule', default=None)
     weight = models.IntegerField(default=0)
     description = models.TextField(max_length=250, help_text='Enter description of rule')
+    completed = models.BooleanField(default=False, help_text='Is this rule completed?')
 
     class Meta:
         ordering = ['name']
@@ -29,15 +30,15 @@ class Rule(models.Model):
         return reverse('rule-detail', args=[str(self.id)])
 
 
-class RuleInstance(models.Model):
-    """
-    Model representing instances of rules
-    """
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this rule')
-    rules = models.ForeignKey(Rule, on_delete=models.SET_NULL, null=True)
+# class RuleInstance(models.Model):
+#     """
+#     Model representing instances of rules. Might not be necessary to have
+#     """
+#     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this rule')
+#     rules = models.ForeignKey(Rule, on_delete=models.SET_NULL, null=True)
 
-    def __str__(self):
-        return f'{self.id}, {self.rule.name}'
+#     def __str__(self):
+#         return f'{self.id}, {self.rule.name}'
 
 class Kid(models.Model):
     """
@@ -66,7 +67,7 @@ class Kid(models.Model):
 
 class KidInstance(models.Model):
     """
-    Model for an individual kid
+    Model for an individual kid. Honestly not sure if this will be needed either.
 
     Learn more about permissions here: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
     """
