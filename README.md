@@ -108,4 +108,4 @@ List of rewards for doing tasks, and the points they can become available at. Do
 
 8/4: I'm going to try to refactor by splitting the Rule model off into it's own app, so I can 1: reference it within the Kid model the way I want to, withouth the call stack gettin in the way, and 2: maybe access it more easily from the kids app. Don't know if it'll work yet, but current stuff is causing trouble so might as well try.
 
-8/7: next step is figuring out how to assign instances of rules to kids. Currently all rules will display, since Kid Instance isn't communicating to Rule Instance
+8/7: next step is figuring out how to assign instances of rules to kids. Currently all rules will display, since Kid Instance isn't communicating to Rule Instance. Going to need to be able to view and edit rules that are attached to specific kids. I think I WILL need a rules instance, but WON'T need a kid instance.
