@@ -13,13 +13,14 @@ class Rule(models.Model):
     name = models.CharField(max_length=50, help_text='Enter rule', default=None)
     weight = models.IntegerField(default=0)
     description = models.TextField(max_length=250, help_text='Enter description of rule')
+    completed = models.BooleanField(default=False, help_text='Is this rule completed?')
 
     class Meta:
         ordering = ['name']
 
     # methods
     def __str__(self):
-        return f'Rule: {self.name} \n Points worth: {self.weight} \n Description: {self.description}'
+        return f'{self.name} \n Points worth: {self.weight} \n Description: {self.description}'
 
     def get_absolute_url(self):
         """
@@ -31,11 +32,13 @@ class Rule(models.Model):
 
 class RuleInstance(models.Model):
     """
-    Model representing all the rules
+    Model representing instances of rules. Instances should be assigned to kids.
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this rule')
-    rules = models.ForeignKey(Rule, on_delete=models.SET_NULL, null=True)
+    rule = models.ForeignKey(Rule, on_delete=models.SET_NULL, null=True)
 
+    def __str__(self):
+        return f'{self.id}, {self.rule.name}'
 
 class Kid(models.Model):
     """
@@ -59,28 +62,6 @@ class Kid(models.Model):
         """
     
         return reverse('kid-detail', args=[str(self.id)])
-
-
-
-class KidInstance(models.Model):
-    """
-    Model for an individual kid
-
-    Learn more about permissions here: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
-    """
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this kid')
-    kid = models.ForeignKey(Kid, on_delete=models.SET_NULL, null=True)
-    points = models.IntegerField(default=0)
-    rules = models.ManyToManyField(Rule, help_text='Select a rule to give to this kid')
-    parent = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-
-    class Meta:
-        ordering = ['-points']
-
-    def __str__(self):
-        return f'{self.id}, {self.kid.name}'
-
-
 
 class Reward(models.Model):
     name = models.CharField(max_length=50, help_text='Enter reward', default=None)
