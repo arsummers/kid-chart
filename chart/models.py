@@ -42,7 +42,7 @@ class RuleInstance(models.Model):
 
 class Kid(models.Model):
     """
-    Model representing a base class for kids. Each kid will be represented by name with a primary key. Rules can be assigned to individual kids. 'Rules' points to RuleInstance, since individual instances need to be assigned to kids.
+    Model representing a base class for kids. Each kid will be represented by name with a primary key. Rules can be assigned to individual kids. 'Rules' points to RuleInstance, since individual instances need to be assigned to kids. Should be moved back to a many to many, since kids need the ability to be assigned more than one rule.
     """
     name = models.CharField(max_length=20, help_text='Enter kid name', default=None)
     rules = models.ForeignKey(RuleInstance, on_delete=models.SET_NULL, null=True, help_text='Select a rule to give to this kid')
