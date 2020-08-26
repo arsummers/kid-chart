@@ -13,7 +13,7 @@ class Rule(models.Model):
     name = models.CharField(max_length=50, help_text='Enter rule', default=None)
     weight = models.IntegerField(default=0)
     description = models.TextField(max_length=250, help_text='Enter description of rule')
-    completed = models.BooleanField(default=False, help_text='Is this rule completed?')
+    # completed = models.BooleanField(default=False, help_text='Is this rule completed?')
 
     class Meta:
         ordering = ['name']
@@ -36,6 +36,9 @@ class RuleInstance(models.Model):
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this rule')
     rule = models.ForeignKey(Rule, on_delete=models.SET_NULL, null=True)
+    # added kids here
+    kid = models.ForeignKey('Kid', related_name='rules', on_delete=models.SET_NULL, null=True)
+    completed = models.BooleanField(default=False, help_text='Is this rule completed?')
 
     def __str__(self):
         return f'{self.id}, {self.rule.name}'
@@ -45,7 +48,7 @@ class Kid(models.Model):
     Model representing a base class for kids. Each kid will be represented by name with a primary key. Rules can be assigned to individual kids. 'Rules' points to RuleInstance, since individual instances need to be assigned to kids. Should be moved back to a many to many, since kids need the ability to be assigned more than one rule.
     """
     name = models.CharField(max_length=20, help_text='Enter kid name', default=None)
-    rules = models.ManyToManyField(RuleInstance, help_text='Select a rule to give to this kid')
+    # rules = models.ManyToManyField(RuleInstance, help_text='Select a rule to give to this kid')
     # https://docs.djangoproject.com/en/3.0/topics/db/examples/many_to_many/
     points = models.IntegerField(default=0)
 
