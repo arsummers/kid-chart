@@ -111,3 +111,5 @@ List of rewards for doing tasks, and the points they can become available at. Do
 8/7: next step is figuring out how to assign instances of rules to kids. Currently all rules will display, since Kid Instance isn't communicating to Rule Instance. Going to need to be able to view and edit rules that are attached to specific kids. I think I WILL need a rules instance, but WON'T need a kid instance.
 
 8/14: models probably fine, or mostly fine as they are. Next, I will need: a button attached to each child that: creates a new instance of a rule, and assigns it to that child. All rule instances assigned to a child should display on that child's page.
+
+8/26: updated models to better accomplish what they needed to do. Should be able to assign rule instances to kids. Next up: start assigning rules to kids via admin, then via accessible UI, display rules assigned to kids.
