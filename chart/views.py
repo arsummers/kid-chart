@@ -15,12 +15,12 @@ def index(request):
 
     rules_list = Rule.objects.all()
 
-    rule_instance_list = RuleInstance.objects.all()
+    # rule_instance_list = RuleInstance.objects.all()
 
     context = {
         'kids_list' : kids_list,
         'rules_list' : rules_list,
-        'rule_instance_list': rule_instance_list,
+        # 'rule_instance_list': rule_instance_list,
     }
 
     return render(request, 'index.html', context=context)
@@ -32,6 +32,7 @@ class KidListView(generic.ListView):
 
 
 class KidDetailView(generic.DetailView):
+
     model = Kid
 
     def get_context_data(self, **kwargs):

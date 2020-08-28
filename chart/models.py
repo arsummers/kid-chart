@@ -32,11 +32,11 @@ class Rule(models.Model):
 
 class RuleInstance(models.Model):
     """
-    Model representing instances of rules. Instances should be assigned to kids.
+    Model representing instances of rules. Instances should be assigned to kids. New rules instances can now be assigned to kids.
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this rule')
     rule = models.ForeignKey(Rule, on_delete=models.SET_NULL, null=True)
-    # added kids here
+    # added kids here. Referenced by name rather than directly to avoid the call-stack getting confused
     kid = models.ForeignKey('Kid', related_name='rules', on_delete=models.SET_NULL, null=True)
     completed = models.BooleanField(default=False, help_text='Is this rule completed?')
 
@@ -48,8 +48,6 @@ class Kid(models.Model):
     Model representing a base class for kids. Each kid will be represented by name with a primary key. Rules can be assigned to individual kids.
     """
     name = models.CharField(max_length=20, help_text='Enter kid name', default=None)
-    # rules = models.ManyToManyField(RuleInstance, help_text='Select a rule to give to this kid')
-    # https://docs.djangoproject.com/en/3.0/topics/db/examples/many_to_many/
     points = models.IntegerField(default=0)
 
     class Meta:
