@@ -13,4 +13,5 @@ urlpatterns = [
     path('rule/create/', views.RuleCreate.as_view(), name='rule-create'),
     path('rules/<int:pk>/update', views.RuleUpdate.as_view(), name='rule-update'),
     path('rules/<int:pk>/delete', views.RuleDelete.as_view(), name='rule-delete'),
+    path('kids/<int:pk>/rules', views.KidRuleList.as_view(), name='kid-rules')
 ]

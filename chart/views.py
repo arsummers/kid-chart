@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
@@ -43,6 +44,7 @@ class KidDetailView(generic.DetailView):
         return context
 
 
+
 class KidCreate(CreateView):
     model = Kid
     fields = '__all__'
@@ -80,3 +82,18 @@ class RuleUpdate(UpdateView):
 class RuleDelete(DeleteView):
     model = Rule
     success_url = reverse_lazy('rules')
+
+class KidRuleList(ListView):
+
+    template_name = 'chart/rules_for_kids.html'
+
+    def get_queryset(self):
+        self.kid = get_object_or_404(Kid, name=self.kwargs['kid'])
+        return RuleInstance.objects.filter(kid=self.kid)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['kid'] = self.kid
+
+        return context
