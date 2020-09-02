@@ -16,12 +16,9 @@ def index(request):
 
     rules_list = Rule.objects.all()
 
-    # rule_instance_list = RuleInstance.objects.all()
-
     context = {
         'kids_list' : kids_list,
         'rules_list' : rules_list,
-        # 'rule_instance_list': rule_instance_list,
     }
 
     return render(request, 'index.html', context=context)
@@ -36,13 +33,13 @@ class KidDetailView(generic.DetailView):
 
     model = Kid
 
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
         context['rule_instance_list'] = RuleInstance.objects.all()
 
         return context
-
 
 
 class KidCreate(CreateView):
@@ -86,6 +83,8 @@ class RuleDelete(DeleteView):
 class KidRuleList(ListView):
 
     template_name = 'chart/rules_for_kids.html'
+
+    # this might not be what I need, but it could work. URL is case sensitive!
 
     def get_queryset(self):
         self.kid = get_object_or_404(Kid, name=self.kwargs['kid'])
