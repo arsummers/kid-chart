@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
@@ -15,12 +16,9 @@ def index(request):
 
     rules_list = Rule.objects.all()
 
-    rule_instance_list = RuleInstance.objects.all()
-
     context = {
         'kids_list' : kids_list,
         'rules_list' : rules_list,
-        'rule_instance_list': rule_instance_list,
     }
 
     return render(request, 'index.html', context=context)
@@ -32,7 +30,9 @@ class KidListView(generic.ListView):
 
 
 class KidDetailView(generic.DetailView):
+
     model = Kid
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -79,3 +79,20 @@ class RuleUpdate(UpdateView):
 class RuleDelete(DeleteView):
     model = Rule
     success_url = reverse_lazy('rules')
+
+class KidRuleList(ListView):
+
+    template_name = 'chart/rules_for_kids.html'
+
+    # this might not be what I need, but it could work. URL is case sensitive!
+
+    def get_queryset(self):
+        self.kid = get_object_or_404(Kid, name=self.kwargs['kid'])
+        return RuleInstance.objects.filter(kid=self.kid)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['kid'] = self.kid
+
+        return context
