@@ -10,11 +10,13 @@
 
 
     {% for rule in rule_instance_list %}
+      {% if rule.kid.name == kid.name %}
       <hr>
+
       <p>
         {{ rule }}
       </p>
-      
+      {% endif %}
     {% endfor %}
 
   <button><a href="{{ kid.get_absolute_url }}/update">Assign a rule</a></button>

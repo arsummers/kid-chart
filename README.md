@@ -115,3 +115,5 @@ List of rewards for doing tasks, and the points they can become available at. Do
 8/26: updated models to better accomplish what they needed to do. Should be able to assign rule instances to kids. Next up: start assigning rules to kids via admin (this part works), then make that accessible via basic UI, display rules assigned to kids rather than all rule instances. Have to assign kids to rules from the rules instance page. Might need some finagling to get it all figured out in the front end. I'll know it works if all the rules are listed on kid A's page (since they're all assigned there), and none are on any other's
 
 8/27: Going to try [dynamic filtering](https://docs.djangoproject.com/en/3.0/topics/class-based-views/generic-display/) by creating a KidRuleList view. 
+
+9/4: ... tried an if statement. it works. theta.
