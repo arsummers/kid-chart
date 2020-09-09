@@ -79,20 +79,3 @@ class RuleUpdate(UpdateView):
 class RuleDelete(DeleteView):
     model = Rule
     success_url = reverse_lazy('rules')
-
-class KidRuleList(ListView):
-
-    template_name = 'chart/rules_for_kids.html'
-
-    # this might not be what I need, but it could work. URL is case sensitive!
-
-    def get_queryset(self):
-        self.kid = get_object_or_404(Kid, name=self.kwargs['kid'])
-        return RuleInstance.objects.filter(kid=self.kid)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        context['kid'] = self.kid
-
-        return context

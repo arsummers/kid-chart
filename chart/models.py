@@ -41,7 +41,7 @@ class RuleInstance(models.Model):
     completed = models.BooleanField(default=False, help_text='Is this rule completed?')
 
     def __str__(self):
-        return f'{self.id}, {self.rule.name}, Assigned to: {self.kid.name}'
+        return f'{self.rule.name}, Assigned to: {self.kid.name}, Completed: {self.completed}'
 
 class Kid(models.Model):
     """
