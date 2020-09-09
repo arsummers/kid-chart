@@ -117,3 +117,5 @@ List of rewards for doing tasks, and the points they can become available at. Do
 8/27: Going to try [dynamic filtering](https://docs.djangoproject.com/en/3.0/topics/class-based-views/generic-display/) by creating a KidRuleList view. 
 
 9/4: ... tried an if statement. it works. theta. Next up: create ability to make new rules instances from the base site, and better format the rules as they display for the kids
+
+9/9: working on rules instance views. Need a redirect after submitting the rule instance form.

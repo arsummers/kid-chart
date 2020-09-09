@@ -40,6 +40,12 @@ class RuleInstance(models.Model):
     kid = models.ForeignKey('Kid', related_name='rules', on_delete=models.SET_NULL, null=True)
     completed = models.BooleanField(default=False, help_text='Is this rule completed?')
 
+    def get_absolute_url(self):
+        """
+        url to get access to rules instances
+        """
+        return reverse('ruleinstance-detail', args=[str(self.id)])
+
     def __str__(self):
         return f'{self.rule.name}, Assigned to: {self.kid.name}, Completed: {self.completed}'
 
