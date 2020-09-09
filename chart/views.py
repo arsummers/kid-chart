@@ -79,3 +79,7 @@ class RuleUpdate(UpdateView):
 class RuleDelete(DeleteView):
     model = Rule
     success_url = reverse_lazy('rules')
+
+class RuleInstanceCreate(CreateView):
+    model = RuleInstance
+    fields = '__all__'
