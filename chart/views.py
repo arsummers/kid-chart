@@ -78,10 +78,12 @@ class RuleDelete(DeleteView):
     model = Rule
     success_url = reverse_lazy('rules')
 
+
+class RuleInstanceListlView(generic.ListView):
+    model = RuleInstance
+
+
 class RuleInstanceCreate(CreateView):
     model = RuleInstance
     fields = '__all__'
 
-class RuleInstanceDetail(generic.DetailView):
-    model = RuleInstance
-    

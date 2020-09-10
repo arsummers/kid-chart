@@ -44,7 +44,7 @@ class RuleInstance(models.Model):
         """
         url to get access to rules instances
         """
-        return reverse('ruleinstance-detail', args=[str(self.id)])
+        return reverse('ruleinstance-list', args=[str(self.id)])
 
     def __str__(self):
         return f'{self.rule.name}, Assigned to: {self.kid.name}, Completed: {self.completed}'
