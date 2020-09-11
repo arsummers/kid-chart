@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 import uuid
 
+
 # Create your models here.
 
 
@@ -40,11 +41,13 @@ class RuleInstance(models.Model):
     kid = models.ForeignKey('Kid', related_name='rules', on_delete=models.SET_NULL, null=True)
     completed = models.BooleanField(default=False, help_text='Is this rule completed?')
 
-    def get_absolute_url(self):
-        """
-        url to get access to rules instances
-        """
-        return reverse('ruleinstance-list', args=[str(self.id)])
+    # def get_absolute_url(self):
+    #     """
+    #     url to get access to rules instances. Will only work with a detail view, not a list view
+    #     """
+    #     return reverse('ruleinstance-list', args=[str(self.id)])
+
+
 
     def __str__(self):
         return f'{self.rule.name}, Assigned to: {self.kid.name}, Completed: {self.completed}'

@@ -5,6 +5,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from chart.models import Kid, Reward, Rule, RuleInstance
+from django.views.generic.base import RedirectView
 # Create your views here.
 
 @login_required
