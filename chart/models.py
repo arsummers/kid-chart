@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.views.generic.base import HttpResponseRedirect
 from django.contrib.auth.models import User
 import uuid
 
@@ -45,9 +46,8 @@ class RuleInstance(models.Model):
     #     """
     #     url to get access to rules instances. Will only work with a detail view, not a list view
     #     """
-    #     return reverse('ruleinstance-list', args=[str(self.id)])
-
-
+    #     # return reverse('ruleinstance-list', args=[str(self.id)])
+    #     return reverse('rule-instance/create/', args=[str(self.id)])
 
     def __str__(self):
         return f'{self.rule.name}, Assigned to: {self.kid.name}, Completed: {self.completed}'

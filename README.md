@@ -121,3 +121,5 @@ List of rewards for doing tasks, and the points they can become available at. Do
 9/9: working on rules instance views. Need a redirect after submitting the rule instance form.
 
 9/11: Still need to figure out how to redirect back to the rules instance creation form when it gets submitted. Reluctant to make a full detail view, since it feels like each rules instance really doesn't need it's own page. Once the redirect is working, I want to figure out how to incorporate the button for it into the kid detail template.
+
+9/14: Computer is having trouble opening files with code. Might need to create a primary key section for rules instances, even though I really don't want to

@@ -5,7 +5,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from chart.models import Kid, Reward, Rule, RuleInstance
-from django.views.generic.base import RedirectView
+from django.views.generic.base import HttpResponseRedirect
+from django.forms import ModelForm
 # Create your views here.
 
 @login_required
@@ -80,7 +81,7 @@ class RuleDelete(DeleteView):
     success_url = reverse_lazy('rules')
 
 
-class RuleInstanceListlView(generic.ListView):
+class RuleInstanceListView(generic.ListView):
     model = RuleInstance
 
 
@@ -88,3 +89,5 @@ class RuleInstanceCreate(CreateView):
     model = RuleInstance
     fields = '__all__'
 
+class RuleInstanceForm(ModelForm):
+    pass
