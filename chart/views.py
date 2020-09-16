@@ -91,3 +91,13 @@ class RuleInstanceCreate(CreateView):
 
 class RuleInstanceForm(ModelForm):
     pass
+
+class RuleInstanceDetailView(generic.DetailView):
+    model = RuleInstance
+
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+
+    #     context['rule_instance_list'] = RuleInstance.objects.all()
+
+    #     return context

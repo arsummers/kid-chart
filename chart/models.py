@@ -38,7 +38,6 @@ class RuleInstance(models.Model):
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this rule')
     rule = models.ForeignKey(Rule, on_delete=models.SET_NULL, null=True)
-    # added kids here. Referenced by name rather than directly to avoid the call-stack getting confused
     kid = models.ForeignKey('Kid', related_name='rules', on_delete=models.SET_NULL, null=True)
     completed = models.BooleanField(default=False, help_text='Is this rule completed?')
 

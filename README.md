@@ -122,4 +122,6 @@ List of rewards for doing tasks, and the points they can become available at. Do
 
 9/11: Still need to figure out how to redirect back to the rules instance creation form when it gets submitted. Reluctant to make a full detail view, since it feels like each rules instance really doesn't need it's own page. Once the redirect is working, I want to figure out how to incorporate the button for it into the kid detail template.
 
-9/14: Computer is having trouble opening files with code. Might need to create a primary key section for rules instances, even though I really don't want to
+9/14: Computer is having trouble opening files with code. Might need to create a primary key section for rules instances, even though I really don't want to.  Why does it work in the admin panel but not via templates?
+
+9/15: tried taking the uuid field off of rules instance, and letting it become a basic primary key, so I can hopefully make a rule instance detail page I can redirect to after create a new one via template form. Got an integry error after running migrations even though makemigrations was fine. Changed it back, then got the same error. Very weird.
