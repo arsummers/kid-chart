@@ -5,6 +5,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from chart.models import Kid, Reward, Rule, RuleInstance
+from django.views.generic.base import HttpResponseRedirect
+from django.forms import ModelForm
 # Create your views here.
 
 @login_required
@@ -25,8 +27,6 @@ def index(request):
 
 class KidListView(generic.ListView):
     model = Kid
-
-# I will need to pass all of the rules assigned to this view and template as well, so the user can easily see what they've assigned to that kid
 
 
 class KidDetailView(generic.DetailView):
@@ -79,6 +79,11 @@ class RuleUpdate(UpdateView):
 class RuleDelete(DeleteView):
     model = Rule
     success_url = reverse_lazy('rules')
+
+
+class RuleInstanceListView(generic.ListView):
+    model = RuleInstance
+
 
 class RuleInstanceCreate(CreateView):
     model = RuleInstance

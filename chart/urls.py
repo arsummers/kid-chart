@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, reverse
 from . import views
 
 urlpatterns = [
@@ -13,5 +13,6 @@ urlpatterns = [
     path('rule/create/', views.RuleCreate.as_view(), name='rule-create'),
     path('rules/<int:pk>/update', views.RuleUpdate.as_view(), name='rule-update'),
     path('rules/<int:pk>/delete', views.RuleDelete.as_view(), name='rule-delete'),
-    path('rule-instance/create/', views.RuleInstanceCreate.as_view(), name='rule-instance-create')
+    path('rule-instances', views.RuleInstanceListView.as_view(), name='rule-instance-list'),
+    path('rule-instance/create/', views.RuleInstanceCreate.as_view(success_url='/'),  name='rule-instance-create'),
 ]

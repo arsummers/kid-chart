@@ -1,7 +1,10 @@
 from django.db import models
+from django.forms import ModelForm
 from django.urls import reverse
+from django.views.generic.base import HttpResponseRedirect
 from django.contrib.auth.models import User
 import uuid
+
 
 # Create your models here.
 
@@ -36,12 +39,23 @@ class RuleInstance(models.Model):
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this rule')
     rule = models.ForeignKey(Rule, on_delete=models.SET_NULL, null=True)
-    # added kids here. Referenced by name rather than directly to avoid the call-stack getting confused
     kid = models.ForeignKey('Kid', related_name='rules', on_delete=models.SET_NULL, null=True)
     completed = models.BooleanField(default=False, help_text='Is this rule completed?')
 
+    # def get_absolute_url(self):
+    #     """
+    #     url to get access to rules instances. Will only work with a detail view, not a list view
+    #     """
+    #     # return reverse('ruleinstance-list', args=[str(self.id)])
+    #     return reverse('rule-instance/create/', args=[str(self.id)])
+
+
+
+
     def __str__(self):
         return f'{self.rule.name}, Assigned to: {self.kid.name}, Completed: {self.completed}'
+
+
 
 class Kid(models.Model):
     """

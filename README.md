@@ -117,3 +117,11 @@ List of rewards for doing tasks, and the points they can become available at. Do
 8/27: Going to try [dynamic filtering](https://docs.djangoproject.com/en/3.0/topics/class-based-views/generic-display/) by creating a KidRuleList view. 
 
 9/4: ... tried an if statement. it works. theta. Next up: create ability to make new rules instances from the base site, and better format the rules as they display for the kids
+
+9/9: working on rules instance views. Need a redirect after submitting the rule instance form.
+
+9/11: Still need to figure out how to redirect back to the rules instance creation form when it gets submitted. Reluctant to make a full detail view, since it feels like each rules instance really doesn't need it's own page. Once the redirect is working, I want to figure out how to incorporate the button for it into the kid detail template.
+
+9/14: Computer is having trouble opening files with code. Might need to create a primary key section for rules instances, even though I really don't want to.  Why does it work in the admin panel but not via templates?
+
+9/15: Success URL works! Next up is trying to get a button to add a rule from the kid detail template.
