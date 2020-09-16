@@ -18,6 +18,7 @@
           <li><a href="{% url 'index' %}">Home</a></li>
           <li><a href="{% url 'kids' %}">Kids</a></li>
           <li><a href="{% url 'rules' %}">Rules</a></li>
+          <li><a href="{% url 'rule-instance-create' %}">Assign a Rule</a></li>
         </ul>
         {% if user.is_authenticated %}
      <li>User: {{ user.get_username }}</li>
