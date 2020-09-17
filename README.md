@@ -125,3 +125,5 @@ List of rewards for doing tasks, and the points they can become available at. Do
 9/14: Computer is having trouble opening files with code. Might need to create a primary key section for rules instances, even though I really don't want to.  Why does it work in the admin panel but not via templates?
 
 9/15: Success URL works! Next up is trying to get a button to add a rule from the kid detail template.
+
+9/16: Next steps: button to delete a rule instance (this might cause problems), display all elements for rules under the rule on the kid's page,then ability to have rule manipulate kid's points when marked complete
