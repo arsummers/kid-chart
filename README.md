@@ -129,3 +129,5 @@ List of rewards for doing tasks, and the points they can become available at. Do
 9/16: Next steps: display all elements for rules under the rule on the kid's page (So that you can mark a rule complete from the kid's page), button to delete a rule instance (this might cause problems),then ability to have rule manipulate kid's points when marked complete
 
 9/17: key elements done: working creation forms for rules, kids, instances of rules. Models are hopefully completely done. So, basic CRUD for kids and rule types, CR for rule instances. Problems might occur when I try to access individual rules so I can mark them complete. I can change it from the admin panel. Ideally I need to be able to change it from the main page.
+
+9/18: I think I want this to be a very loose prototype. I know there is good support for various permissions through Django Rest Framework, which I intend to rebuild this in. To call this complete, I want to have each rule assigned to a kid displayed on their page, be able to mark it as complete with a checkbox, have that bump up the kid's points, then be able to delete that rule instance from the kid's page while logged in as a parent.
