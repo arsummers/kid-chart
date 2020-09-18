@@ -126,4 +126,6 @@ List of rewards for doing tasks, and the points they can become available at. Do
 
 9/15: Success URL works! Next up is trying to get a button to add a rule from the kid detail template.
 
-9/16: Next steps: button to delete a rule instance (this might cause problems), display all elements for rules under the rule on the kid's page,then ability to have rule manipulate kid's points when marked complete
+9/16: Next steps: display all elements for rules under the rule on the kid's page (So that you can mark a rule complete from the kid's page), button to delete a rule instance (this might cause problems),then ability to have rule manipulate kid's points when marked complete
+
+9/17: key elements done: working creation forms for rules, kids, instances of rules. Models are hopefully completely done. So, basic CRUD for kids and rule types, CR for rule instances. Problems might occur when I try to access individual rules so I can mark them complete. I can change it from the admin panel. Ideally I need to be able to change it from the main page.
