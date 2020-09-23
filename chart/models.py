@@ -16,7 +16,6 @@ class Rule(models.Model):
     name = models.CharField(max_length=50, help_text='Enter rule', default=None)
     weight = models.IntegerField(default=0)
     description = models.TextField(max_length=250, help_text='Enter description of rule')
-    # completed = models.BooleanField(default=False, help_text='Is this rule completed?')
 
     class Meta:
         ordering = ['name']
@@ -41,16 +40,6 @@ class RuleInstance(models.Model):
     rule = models.ForeignKey(Rule, on_delete=models.SET_NULL, null=True)
     kid = models.ForeignKey('Kid', related_name='rules', on_delete=models.SET_NULL, null=True)
     completed = models.BooleanField(default=False, help_text='Is this rule completed?')
-
-    # def get_absolute_url(self):
-    #     """
-    #     url to get access to rules instances. Will only work with a detail view, not a list view
-    #     """
-    #     # return reverse('ruleinstance-list', args=[str(self.id)])
-    #     return reverse('rule-instance/create/', args=[str(self.id)])
-
-
-
 
     def __str__(self):
         return f'{self.rule.name}, Assigned to: {self.kid.name}, Completed: {self.completed}'
