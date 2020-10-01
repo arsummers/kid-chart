@@ -88,3 +88,5 @@ class RuleInstanceListView(generic.ListView):
 class RuleInstanceCreate(CreateView):
     model = RuleInstance
     fields = '__all__'
+
+# rule instance update should go here
