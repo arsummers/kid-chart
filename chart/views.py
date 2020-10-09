@@ -32,7 +32,12 @@ class KidListView(generic.ListView):
 class KidDetailView(generic.DetailView):
 
     model = Kid
+    
+    # gonna need to set up log in stuff - should just convert to DRF
+    def get_queryset(self, **kwargs):
+        queryset = RuleInstance.objects.filter(kid=self.name)
 
+    # 
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -88,3 +93,8 @@ class RuleInstanceListView(generic.ListView):
 class RuleInstanceCreate(CreateView):
     model = RuleInstance
     fields = '__all__'
+
+class RuleInstanceUpdate(UpdateView):
+    model = RuleInstance
+    fields = '__all__'
+# rule instance update should go here

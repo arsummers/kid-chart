@@ -1,4 +1,6 @@
 # kid-chart
+** TABLED FOR NOW - REBUILDING WITH DJANGO REST FRAMEWORK **
+
 This is going to be the web-app version of kid chart.
 Current goal is to make this into a usuable django site, then make a django rest framework version to feed into a mobile-app friendly front-end.
 
@@ -125,3 +127,13 @@ List of rewards for doing tasks, and the points they can become available at. Do
 9/14: Computer is having trouble opening files with code. Might need to create a primary key section for rules instances, even though I really don't want to.  Why does it work in the admin panel but not via templates?
 
 9/15: Success URL works! Next up is trying to get a button to add a rule from the kid detail template.
+
+9/16: Next steps: display all elements for rules under the rule on the kid's page (So that you can mark a rule complete from the kid's page), button to delete a rule instance (this might cause problems),then ability to have rule manipulate kid's points when marked complete
+
+9/17: key elements done: working creation forms for rules, kids, instances of rules. Models are hopefully completely done. So, basic CRUD for kids and rule types, CR for rule instances. Problems might occur when I try to access individual rules so I can mark them complete. I can change it from the admin panel. Ideally I need to be able to change it from the main page.
+
+9/18: I think I want this to be a very loose prototype. I know there is good support for various permissions through Django Rest Framework, which I intend to rebuild this in. To call this complete, I want to have each rule assigned to a kid displayed on their page, be able to mark it as complete with a checkbox (will involve some sort of edit/update page - could be used as a partial maybe, so limit time spent flipping through pages), have that bump up the kid's points when completed is set to True, then be able to delete that rule instance from the kid's page while logged in as a parent. Deleting the rule shouldn't influence the kid's points.
+
+9/25: I will need to incorporate the rule instances UUIDs into a URL so I can more easily do things with them. Once I get them to work as URLs, I'd like to be able to display them as partials so that updating and deleting can happen from the kid's page
+
+10/9: Tabling this version of this for now. To progress, I would need to get user stuff all working, which lends itself better to django rest framework. Since I was already planning on finalizing this as a RESTful API, to feed to a mobile front-end, now feels like the time. Likely going to need to do something with the queryset. Code for that has been left in here. 
