@@ -19,6 +19,26 @@
       {% endif %}
     {% endfor %}
 
+
+{% comment %}
+
+def update_view(request, id): 
+    # dictionary for initial data with  
+    # field names as keys 
+    context ={} 
+    # fetch the object related to passed id 
+    obj = get_object_or_404(GeeksModel, id = id) 
+    # pass the object as instance in form 
+    form = GeeksForm(request.POST or None, instance = obj) 
+    # save the data from the form and 
+    # redirect to detail_view 
+    if form.is_valid(): 
+        form.save() 
+        return HttpResponseRedirect("/"+id) 
+    # add form dictionary to context 
+    context["form"] = form 
+{% endcomment %}
+
   <button><a href="{{ kid.get_absolute_url }}/update">Create and assign a rule - will eventually leaf to rule instance creation</a></button>
 
   <button><a href="{{ kid.get_absolute_url }}/delete">Delete this kid</a></button>

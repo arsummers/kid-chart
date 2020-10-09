@@ -16,5 +16,5 @@ urlpatterns = [
     path('rule-instances', views.RuleInstanceListView.as_view(), name='rule-instance-list'),
     path('rule-instance/create/', views.RuleInstanceCreate.as_view(success_url='/'),  name='rule-instance-create'),
     # put url to rule instance edit here. Can't find anything on moving a uuid into a url
-    # path('rule-instance/<uuid:pk>/update', views.RuleInstanceUpdate.as_view()),
+    path('rule-instance/<uuid:pk>/update', views.RuleInstanceUpdate.as_view()),
 ]

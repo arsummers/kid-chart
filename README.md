@@ -1,4 +1,6 @@
 # kid-chart
+** TABLED FOR NOW - REBUILDING WITH DJANGO REST FRAMEWORK **
+
 This is going to be the web-app version of kid chart.
 Current goal is to make this into a usuable django site, then make a django rest framework version to feed into a mobile-app friendly front-end.
 
@@ -133,3 +135,5 @@ List of rewards for doing tasks, and the points they can become available at. Do
 9/18: I think I want this to be a very loose prototype. I know there is good support for various permissions through Django Rest Framework, which I intend to rebuild this in. To call this complete, I want to have each rule assigned to a kid displayed on their page, be able to mark it as complete with a checkbox (will involve some sort of edit/update page - could be used as a partial maybe, so limit time spent flipping through pages), have that bump up the kid's points when completed is set to True, then be able to delete that rule instance from the kid's page while logged in as a parent. Deleting the rule shouldn't influence the kid's points.
 
 9/25: I will need to incorporate the rule instances UUIDs into a URL so I can more easily do things with them. Once I get them to work as URLs, I'd like to be able to display them as partials so that updating and deleting can happen from the kid's page
+
+10/9: Tabling this version of this for now. To progress, I would need to get user stuff all working, which lends itself better to django rest framework. Since I was already planning on finalizing this as a RESTful API, to feed to a mobile front-end, now feels like the time. Likely going to need to do something with the queryset. Code for that has been left in here. 
